@@ -1,0 +1,8 @@
+<form method="post" action=".">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Guardar">
+    {% if delete_url %} <!-- esta linea se encarga de mostrar el boton de eliminar si existe la url de eliminacion-->
+    <a href="{{ delete_url }}" class="btn btn-danger">Eliminar</a>
+    {% endif %}
+</form>
